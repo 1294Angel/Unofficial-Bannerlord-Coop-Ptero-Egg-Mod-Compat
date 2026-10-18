@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>BUTR.CrashReport.Renderer.WinForms</AssemblyName>
+    <RootNamespace>BUTR.CrashReport.Renderer.WinForms</RootNamespace>
+    <AssemblyVersion>14.0.0.99</AssemblyVersion>
+    <FileVersion>14.0.0.99</FileVersion>
+    <Version>14.0.0.99</Version>
+    <SignAssembly>false</SignAssembly>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>CS8632</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BUTR.CrashReport.Models">
+      <HintPath>../refs/BUTR.CrashReport.Models.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

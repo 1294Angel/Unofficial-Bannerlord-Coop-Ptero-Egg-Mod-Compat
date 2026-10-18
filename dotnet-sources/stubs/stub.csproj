@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>BUTR.CrashReport.Renderer.ImGui</AssemblyName>
+    <RootNamespace>BUTR.CrashReport.Renderer.ImGui</RootNamespace>
+    <AssemblyVersion>14.0.0.99</AssemblyVersion>
+    <FileVersion>14.0.0.99</FileVersion>
+    <Version>14.0.0.99</Version>
+    <SignAssembly>false</SignAssembly>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>CS8632</NoWarn>
+    <ButterLibBinDir Condition="'$(ButterLibBinDir)' == ''">../../../steamapps/workshop/content/261550/2859232415/bin/Win64_Shipping_Client</ButterLibBinDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BUTR.CrashReport">
+      <HintPath>$(ButterLibBinDir)/BUTR.CrashReport.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BUTR.CrashReport.Models">
+      <HintPath>$(ButterLibBinDir)/BUTR.CrashReport.Models.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

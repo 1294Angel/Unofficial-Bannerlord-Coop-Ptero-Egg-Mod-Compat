@@ -1,0 +1,19 @@
+<Module>
+  <Name value="HeadlessDiag"/>
+  <Id value="HeadlessDiag"/>
+  <Version value="v1.0.0"/>
+  <SingleplayerModule value="true"/>
+  <MultiplayerModule value="false"/>
+  <Official value="false"/>
+  <DependedModules>
+    <DependedModule Id="Native"/>
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="HeadlessDiag"/>
+      <DLLName value="HeadlessDiag.dll"/>
+      <SubModuleClassType value="HeadlessDiag.SubModule"/>
+      <Tags/>
+    </SubModule>
+  </SubModules>
+</Module>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>BUTR.CrashReport</AssemblyName>
+    <RootNamespace>BUTR.CrashReport</RootNamespace>
+    <AssemblyVersion>14.0.0.99</AssemblyVersion>
+    <FileVersion>14.0.0.99</FileVersion>
+    <Version>14.0.0.99</Version>
+    <SignAssembly>false</SignAssembly>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+</Project>

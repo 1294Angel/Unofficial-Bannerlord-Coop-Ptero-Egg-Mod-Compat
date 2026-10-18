@@ -1,0 +1,68 @@
+{
+    "name": "Bannerlord Coop Dedicated Server (Unofficial)",
+    "author": "vona@example.invalid",
+    "description": "Dedicated server for the Bannerlord Coop mod (CoopNightly) for Mount & Blade II: Bannerlord, run under Wine. The server and any Workshop mods are downloaded with your own Steam account that owns Bannerlord. Unofficial, and not affiliated with Bannerlord Coop LLC or TaleWorlds. Read and accept the Coop EULA before use.",
+    "docker_images": {
+        "Wine": "ghcr.io/ptero-eggs/yolks:wine_latest"
+    },
+    "startup": "cd coop-egg && python3 -u -m coopegg",
+    "done": "SERVER UP",
+    "stop": "stop",
+    "install_container": "ghcr.io/ptero-eggs/installers:debian",
+    "variables": [
+        {
+            "name": "Steam account",
+            "description": "Name of a Steam account that owns Mount & Blade II: Bannerlord. It is used to download the Coop server and the Workshop mods. It is never written to the logs.",
+            "env_variable": "STEAM_ACCOUNT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:64"
+        },
+        {
+            "name": "Steam password",
+            "description": "Password for the Steam account. The Panel does not mask this field, and every admin of the Panel can read it. If Steam asks for a Steam Guard code on the first start, type it into the Panel console.",
+            "env_variable": "STEAM_ACCOUNT_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:128"
+        },
+        {
+            "name": "Accept Coop EULA",
+            "description": "Set to 1 to accept the Bannerlord Coop EULA and licence. The server refuses to start until you do. After the first download you can read DedicatedServer/EULA.md and DedicatedServer/LICENSE.txt in the Files tab. Paid hosting needs written permission from Bannerlord Coop LLC.",
+            "env_variable": "ACCEPT_EULA",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Workshop mods",
+            "description": "Steam Workshop item IDs of mods to run, separated by commas, for example 2859188632,2859232415. Leave empty for a plain Coop server. Players need the same mods. The list, with names and links, is saved to modlist.txt.",
+            "env_variable": "WORKSHOP_MODS",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:1024"
+        },
+        {
+            "name": "Join password",
+            "description": "Password players must enter to join. Leave empty for none.",
+            "env_variable": "SERVER_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:128"
+        },
+        {
+            "name": "World save name",
+            "description": "Name of the campaign save to host (without .sav). A new world is created if it does not exist. To host a save from your own PC, upload it to the Game Saves folder described in the README and enter its name here.",
+            "env_variable": "SAVE_NAME",
+            "default_value": "saveauto1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:64|regex:/^[A-Za-z0-9_-]+$/"
+        }
+    ]
+}
