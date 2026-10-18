@@ -2,7 +2,7 @@
     "_comment": "Bannerlord Coop (unofficial) egg. Built by tools/build_egg.py; edit egg-source/ and runtime/, not this file.",
     "meta": {
         "version": "PTDL_v2",
-        "update_url": null
+        "update_url": "https://raw.githubusercontent.com/1294Angel/Unofficial-Bannerlord-Coop-Ptero-Egg/main/egg-bannerlord-coop.json"
     },
     "exported_at": "2026-10-18T16:43:32+00:00",
     "name": "Bannerlord Coop Dedicated Server (Unofficial)",
