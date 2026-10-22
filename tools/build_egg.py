@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LIMIT = 65000
-UPDATE_URL = "https://raw.githubusercontent.com/1294Angel/Unofficial-Bannerlord-Coop-Ptero-Egg/main/egg-bannerlord-coop.json"
+UPDATE_URL = "https://raw.githubusercontent.com/1294Angel/Unofficial-Bannerlord-Coop-Ptero-Egg-Mod-Compat/main/egg-bannerlord-coop.json"
 
 
 def pack_runtime():
