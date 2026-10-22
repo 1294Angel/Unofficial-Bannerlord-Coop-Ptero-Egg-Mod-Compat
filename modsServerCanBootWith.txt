@@ -1,0 +1,158 @@
+Mods that the server can boot with (Some may have issues in gameplay, but will not stop the server booting)
+
+2859188632 | Harmony
+2859232415 | ButterLib
+2859222409 | UIExtenderEx
+2859238197 | MCM v5
+2875093027 | Dismemberment Plus
+2881380744 | Diplomacy
+3747725551 | RTS Camera
+3747771970 | RTS Camera - Command System
+3810543432 | Living Calradia
+2859251492 | RBM (Realistic Battle Mod)
+2859265386 | Improved Garrisons
+2875960358 | Better Time
+2880190747 | Enable Achievement
+2875138158 | Xorberax's Legacy
+2875226388 | Governors Handle Issues
+2882064139 | Relentless Smith
+2877445271 | CC's Banners
+2959469806 | Family Tree
+2875080792 | MoreArenas
+2882183897 | Cheats
+2990327671 | Historical Banner Icons
+3808922377 | Serve as Soldier
+3812071551 | Forge Your Own Armor
+3797748062 | COOP Family
+3814877341 | Companion Autonomy
+3798811600 | Dynasty Core
+3010984416 | Open Source Weaponry
+2875496157 | Bahamut's Armory
+2875090166 | swadian armoury
+2880365016 | Bodyguards
+2875642325 | BannerColorPersistence with BannerPaste
+3349276720 | Player Settlement
+2892150920 | My Little Warband
+2891413076 | Distinguished Service
+2879876957 | Hideout Plus
+2859900052 | Surrender Tweaks
+2902899268 | Useful Companions
+3599557394 | Retinues - Custom Clan and Kingdom Troops (for v1.3 & v1.4) (DLC compa
+2875508967 | Adonnay's Troop Changer
+2880997722 | DynaCulture
+3035615782 | Marry Anyone Updated
+2882454523 | B.A.R.D. - Khuzait Army Overhaul
+3117962790 | Party AI Controls
+2913601276 | Zweihander and Claymore
+2896450980 | Adjustable Bandits
+2886361563 | Smith Stamina Regen Anywhere
+2875194175 | Leave on Click
+2892151112 | Tournaments XPanded
+2875503961 | Adonnay's Exotic Weaponry
+2875710877 | Fourberie
+2862531759 | Realistic Weather
+2875645408 | Helmet Hair Cover Continued Plus
+2879953123 | Character Manager
+2910268800 | Quick Nearby Tournaments
+3615340073 | Both Perks
+2875660601 | AutoTrader
+2956986632 | Remove Fog of War
+2885762785 | UnlimitedCAP
+2955909085 | Upgrade Your Equipment
+2875101301 | B.A.R.D. - Battanian Army Overhaul
+2879957124 | B.A.R.D. - Aserai Army Overhaul
+2897212014 | Tutelage
+2920954993 | Stop Starving Yourselves
+2875225186 | Super Speed
+2877035441 | Realistic Battle Sounds
+3320802782 | Troops Prefer Spears
+2896410558 | Adjustable Leveling
+2961485825 | More Trait Info
+2875223027 | Heal on Kill
+2886299887 | Detailed Character Creation
+2878685456 | Custom Spawns API
+2876427251 | Suteki Women Mod. War Sails Compatible!
+2880158010 | AgricultureEstate
+2910947065 | Kingdom Politics Expanded
+2925571754 | Vlandian Steel Reforged
+2875089081 | B.A.R.D. - Sturgian Army Overhaul
+2875103010 | B.A.R.D. - Imperial Army Overhaul
+2890978557 | Telepathy
+2875386075 | B.A.R.D. - Vlandian Army Overhaul
+2903901025 | You Keep What You Kill
+2948863126 | Workshops Completed
+2907309923 | Sell all but stop at zero
+3674878917 | Item Quality Indicator
+2875113446 | Aggregated Income
+2880127748 | Random Events
+3024923158 | Better Pikes
+2968204274 | Empires of Europe 1100 (total conversion)
+2890216380 | Kingdom Annexation
+3614435151 | Unblockable Thrust
+2875725090 | Rename Companions
+3310745531 | Companions Limit UnLock
+2917750875 | High Middle Ages Calradia
+2879343374 | RealBattleSize
+2957211804 | Choose Your Troops
+3268203914 | Execution Adjuster
+2999591774 | BetterTroopHUD
+2875076661 | I Don't Care - Campaign Log Filter
+2890977393 | Separatism
+2875905594 | Special Troops Plus
+2878964722 | ScatterAroundExpanded
+2880604887 | Smithy Workshop Tweak
+3119116807 | DynamicTroopReupload
+3618752412 | Clan Armies (1.3.x)
+2993061377 | Expanded Elite Troops
+2933297952 | Beards Fix
+2875168687 | DeReMilitari
+3642009240 | Game Crash Skipper
+3622146187 | More Battle Shouts
+3618489007 | Faster Child Growth
+3645166294 | No Companion Limit
+2886676221 | Troop Sorting
+2905660587 | Culture Switch - Vassals
+2884218327 | Larger Horses
+3309224450 | BetterBandits
+2892362757 | Knights of Vlandia
+3428491263 | Better Bandit Troop Trees
+2883761031 | Civilized
+2882021409 | No Time Limit
+2880159950 | TodayWeFeast
+3798647413 | Heroes Evolve
+3773280133 | Unlimited Siege Ammo
+3806270803 | Heraldry Studio - Complete Collection
+2949132830 | PeasantRevenge
+2912991581 | Bannerlord.WindsOfMagic
+2926993466 | WindsOfMagic.BasicSpells
+2875190917 | Kill Counters
+3620695688 | Marriage Offers For Player
+2883108405 | Elite Mercenaries
+2953564744 | Encyclopedia Extender Reforged
+2875975898 | ArmsDealer
+3435494593 | BetterSmithing
+3508555611 | PartyAndClanLimitExtender
+2888739624 | Party Screen Enhancements
+2875978806 | Balanced Tournament Armor
+2916000111 | Encyclopedia Filters Extended
+3583201039 | UFO's Cheat Mods Bundle [1.4.8]
+2928812888 | Elite Mercenaries Expanded
+3615438656 | Bannerloot
+2945303045 | Keep Your Daughters
+3251872472 | Extra Banners
+3457854001 | Improve the Economy
+3719370392 | Performance Optimizer
+3034083929 | Fast Dialogue (UPDATED)
+2905239873 | Culture Switch - Companions
+3457590233 | Auto Equip Companions
+2885902416 | UnlimitedPS
+2882370524 | Warbandlord
+2945241650 | Player Governor
+2881012899 | Train Troops with Leadership and Level
+2885428909 | CJ's Vanilla Items
+3115155002 | Historical Name Expansion
+3627110143 | Camp Menu
+3495544611 | Heal on Still
+2886206108 | Allegiance Overhaul
+3372837208 | PartySizeReunited
+2859407083 | Calradian Patrols V2
