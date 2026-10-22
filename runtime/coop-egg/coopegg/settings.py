@@ -45,8 +45,8 @@ def coop_data_dir():
     return wine_documents() / "CoopData" / "DedicatedServer"
 
 
-def _flag(name):
-    return os.environ.get(name, "0").strip().lower() in ("1", "true", "yes", "on")
+def _flag(name, default="0"):
+    return os.environ.get(name, default).strip().lower() in ("1", "true", "yes", "on")
 
 
 STEAM_ACCOUNT = os.environ.pop("STEAM_ACCOUNT", "").strip()
@@ -56,7 +56,11 @@ ACCEPT_EULA = _flag("ACCEPT_EULA")
 SERVER_PASSWORD = os.environ.get("SERVER_PASSWORD", "")
 SAVE_NAME = os.environ.get("SAVE_NAME", "").strip() or "saveauto1"
 SERVER_PORT = os.environ.get("SERVER_PORT", "4200").strip() or "4200"
-WORKSHOP_MODS = [m.strip() for m in os.environ.get("WORKSHOP_MODS", "").split(",") if m.strip()]
+AUTOSAVE_MINUTES = os.environ.get("AUTOSAVE_MINUTES", "").strip()
+if not AUTOSAVE_MINUTES.isdigit():
+    AUTOSAVE_MINUTES = "5"
+LOG_FILE = _flag("LOG_FILE", "1")
+WORKSHOP_MODS =[m.strip() for m in os.environ.get("WORKSHOP_MODS", "").split(",") if m.strip()]
 
 HIDDEN_ADDRESSES = [
     os.environ.get(name, "").strip() for name in ("SERVER_IP", "INTERNAL_IP")

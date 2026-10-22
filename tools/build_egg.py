@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LIMIT = 65000
+UPDATE_URL = "https://raw.githubusercontent.com/1294Angel/Unofficial-Bannerlord-Coop-Ptero-Egg/main/egg-bannerlord-coop.json"
 
 
 def pack_runtime():
@@ -43,7 +44,7 @@ def main():
 
     egg = {
         "_comment": "Bannerlord Coop (unofficial) egg. Built by tools/build_egg.py; edit egg-source/ and runtime/, not this file.",
-        "meta": {"version": "PTDL_v2", "update_url": None},
+        "meta": {"version": "PTDL_v2", "update_url": UPDATE_URL},
         "exported_at": time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
         "name": definition["name"],
         "author": definition["author"],

@@ -12,7 +12,7 @@ from coopegg import settings
 from coopegg.mods import load_order, manifest
 from coopegg.mods.fixes import bundled_frameworks, client_only, combat_params, soft_deps
 from coopegg.output.console_filter import QuietConsole
-from coopegg.server import config
+from coopegg.server import config, mod_config
 
 
 settings.SERVER_DIR.mkdir(parents=True, exist_ok=True)
@@ -54,10 +54,73 @@ class ServerConfig(unittest.TestCase):
         config.apply()
         text = path.read_text()
         self.assertIn("// keep me", text)
-        self.assertIn('"autosaveMinutes": 9', text)
+        self.assertIn('"autosaveMinutes": 5', text)
         self.assertIn('"saveName": "mysave"', text)
         self.assertIn('"port": 4310', text)
         self.assertIn('"steam": false', text)
+
+    def test_commented_out_key_is_not_mistaken_for_a_live_one(self):
+        path = settings.coop_data_dir() / "server-config.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('{\n  // "port": 1,\n  "port": 2,\n}\n')
+        config.apply()
+        text = path.read_text()
+        self.assertIn('// "port": 1,', text)
+        self.assertIn('"port": 4310', text)
+
+
+class ModConfig(unittest.TestCase):
+    def setUp(self):
+        self.path = settings.coop_data_dir().parent / "mod-config.json"
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.path.unlink(missing_ok=True)
+        for variable, *_rest in mod_config.OPTIONS:
+            os.environ.pop(variable, None)
+
+    def tearDown(self):
+        for variable, *_rest in mod_config.OPTIONS:
+            os.environ.pop(variable, None)
+
+    def test_nothing_set_touches_nothing(self):
+        mod_config.apply()
+        self.assertFalse(self.path.exists())
+
+    def test_panel_defaults_do_not_create_a_file_but_do_overwrite_an_existing_one(self):
+        for variable, _section, _key, _kind, default in mod_config.OPTIONS:
+            os.environ[variable] = default
+        mod_config.apply()
+        self.assertFalse(self.path.exists())
+        self.path.write_text('{\n  "modOptions": {\n    "wandererLimit": 99,\n  }\n}\n')
+        mod_config.apply()
+        self.assertIn('"wandererLimit": 32', self.path.read_text())
+
+    def test_changes_live_keys_and_adds_commented_out_ones(self):
+        self.path.write_text('{\n  "difficulty": {\n    // "battleDeath": "Easy",\n    "birthAndDeath": true,\n  },\n'
+                             '  "modOptions": {\n    "wandererLimit": 32,\n    "lordDefectionRetries": "Vanilla",\n  }\n}\n')
+        os.environ.update({"COOP_BIRTH_AND_DEATH": "0", "COOP_BATTLE_DEATH": "realistic", "COOP_WANDERER_LIMIT": "50",
+                           "COOP_LORD_DEFECTION_RETRIES": "AlwaysRetry", "COOP_LOOTERS_MULTIPLIER": "1.5"})
+        mod_config.apply()
+        text = self.path.read_text()
+        self.assertIn('"birthAndDeath": false', text)
+        self.assertIn('// "battleDeath": "Easy",', text)
+        self.assertIn('    "battleDeath": "Realistic",', text)
+        self.assertIn('"wandererLimit": 50', text)
+        self.assertIn('"lordDefectionRetries": "AlwaysRetry"', text)
+        self.assertIn('"maximumLootersMultiplier": 1.5', text)
+
+    def test_invalid_values_are_skipped_and_missing_file_is_created(self):
+        os.environ.update({"COOP_WANDERER_LIMIT": "lots", "COOP_AUTO_PAUSE": "false", "COOP_BATTLE_DEATH": "Hard"})
+        mod_config.apply()
+        text = self.path.read_text()
+        self.assertIn('"autoPauseEnabled": false', text)
+        self.assertNotIn("wandererLimit", text)
+        self.assertNotIn("battleDeath", text)
+
+    def test_every_option_has_a_panel_variable(self):
+        import json
+        definition = json.loads((Path(__file__).resolve().parent.parent / "egg-source" / "definition.json").read_text(encoding="utf-8"))
+        panel = {v["env_variable"] for v in definition["variables"]}
+        self.assertEqual({o[0] for o in mod_config.OPTIONS} - panel, set())
 
 
 class LoadOrder(unittest.TestCase):

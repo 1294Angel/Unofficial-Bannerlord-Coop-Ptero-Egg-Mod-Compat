@@ -13,14 +13,17 @@ def _wanted():
         "password": (json.dumps(settings.SERVER_PASSWORD), STRING),
         "port": (settings.SERVER_PORT, r"\d+"),
         "steam": ("false", r"true|false"),
+        "autosaveMinutes": (settings.AUTOSAVE_MINUTES, r"\d+"),
+        "logFile": ("true" if settings.LOG_FILE else "false", r"true|false"),
     }
 
 
 def _first_time_file():
+    items = list(_wanted().items())
     lines = ["{"]
-    for key, (value, _kind) in _wanted().items():
-        lines.append(f'  "{key}": {value},')
-    lines += ['  "autosaveMinutes": 5,', '  "logFile": true', "}", ""]
+    for index, (key, (value, _kind)) in enumerate(items):
+        lines.append(f'  "{key}": {value}{"," if index < len(items) - 1 else ""}')
+    lines += ["}", ""]
     return "\n".join(lines)
 
 
@@ -34,7 +37,7 @@ def apply():
 
     text = path.read_text(encoding="utf-8-sig")
     for key, (value, kind) in _wanted().items():
-        text, count = re.subn(rf'("{key}"\s*:\s*)(?:{kind})', lambda m: m.group(1) + value, text, count=1)
+        text, count = re.subn(rf'(?m)^(\s*"{key}"\s*:\s*)(?:{kind})', lambda m: m.group(1) + value, text, count=1)
         if not count:
             note(f"config: {key} not found in server-config.json; left as it is")
     path.write_text(text, encoding="utf-8")

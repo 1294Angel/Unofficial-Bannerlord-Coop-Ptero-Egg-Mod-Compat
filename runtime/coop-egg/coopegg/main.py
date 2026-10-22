@@ -3,7 +3,7 @@ import sys
 from . import mod_list, settings
 from .mods import prepare
 from .output import scrub, streams
-from .server import config, launch, update, wine
+from .server import config, launch, mod_config, update, wine
 
 
 def main():
@@ -20,6 +20,7 @@ def main():
     prepare.create_addon_folders()
     wine.ensure_prefix()
     config.apply()
+    mod_config.apply()
     modded = prepare.run()
     mod_list.write()
 

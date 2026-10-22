@@ -63,6 +63,276 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:64|regex:/^[A-Za-z0-9_-]+$/"
+        },
+        {
+            "name": "Autosave interval (minutes)",
+            "description": "Minutes between saves. 0 = off. Default: 5.",
+            "env_variable": "AUTOSAVE_MINUTES",
+            "default_value": "5",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|min:0|max:1440"
+        },
+        {
+            "name": "Write log file",
+            "description": "Coop writes its own log file. Default: on.",
+            "env_variable": "LOG_FILE",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Damage players take",
+            "description": "Damage players take. Default: VeryEasy.",
+            "env_variable": "COOP_PLAYER_RECEIVED_DAMAGE",
+            "default_value": "VeryEasy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Damage player troops take",
+            "description": "Damage player troops take. Default: Easy.",
+            "env_variable": "COOP_PLAYER_TROOPS_RECEIVED_DAMAGE",
+            "default_value": "Easy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Combat AI difficulty",
+            "description": "Enemy battle AI. Default: Easy.",
+            "env_variable": "COOP_COMBAT_AI_DIFFICULTY",
+            "default_value": "Easy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Recruitment difficulty",
+            "description": "Recruiting troops. Default: Easy.",
+            "env_variable": "COOP_RECRUITMENT_DIFFICULTY",
+            "default_value": "Easy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Player map movement speed",
+            "description": "Map speed. Default: VeryEasy.",
+            "env_variable": "COOP_PLAYER_MAP_MOVEMENT_SPEED",
+            "default_value": "VeryEasy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Stealth and disguise difficulty",
+            "description": "Sneaking and disguises. Default: Easy.",
+            "env_variable": "COOP_STEALTH_DIFFICULTY",
+            "default_value": "Easy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Persuasion success chance",
+            "description": "Persuasion odds. Default: VeryEasy.",
+            "env_variable": "COOP_PERSUASION_SUCCESS_CHANCE",
+            "default_value": "VeryEasy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Clan member death chance",
+            "description": "Clan member deaths. Default: Easy.",
+            "env_variable": "COOP_CLAN_MEMBER_DEATH_CHANCE",
+            "default_value": "Easy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Battle death",
+            "description": "Hero deaths in battle. Default: Easy.",
+            "env_variable": "COOP_BATTLE_DEATH",
+            "default_value": "Easy",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:VeryEasy,Easy,Realistic"
+        },
+        {
+            "name": "Aging, births and deaths",
+            "description": "Aging, births and natural deaths. Default: off.",
+            "env_variable": "COOP_BIRTH_AND_DEATH",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Auto-allocate clan member perks",
+            "description": "Picks clan member perks for you. Default: off.",
+            "env_variable": "COOP_AUTO_ALLOCATE_PERKS",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Fast forward",
+            "description": "Allow 2x speed. Default: on.",
+            "env_variable": "COOP_FAST_FORWARD",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Auto pause",
+            "description": "Pause when all players are busy. Default: on.",
+            "env_variable": "COOP_AUTO_PAUSE",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Clients can cheat",
+            "description": "Players can use cheats. Default: off.",
+            "env_variable": "COOP_CLIENT_CHEATS",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Income in settlements",
+            "description": "Gold, food and influence change in settlements. Default: off.",
+            "env_variable": "COOP_RESOURCES_IN_SETTLEMENTS",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Income in battles",
+            "description": "Disabled, OneDayMax or Enabled. Default: OneDayMax.",
+            "env_variable": "COOP_RESOURCES_IN_BATTLES",
+            "default_value": "OneDayMax",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:Disabled,OneDayMax,Enabled"
+        },
+        {
+            "name": "Income for offline players",
+            "description": "Offline players still gain or lose gold and food. Default: off.",
+            "env_variable": "COOP_RESOURCES_OFFLINE",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "AI battle join window",
+            "description": "Hours AI can join a player battle. 0 = never. Default: 24.",
+            "env_variable": "COOP_AI_JOIN_WINDOW_HOURS",
+            "default_value": "24",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|min:0|max:100000"
+        },
+        {
+            "name": "Speed limit in battle",
+            "description": "Lock to 1x speed during player battles. Default: on.",
+            "env_variable": "COOP_SPEED_LIMIT_IN_BATTLE",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Wanderer limit",
+            "description": "Max wanderers and companions. Default: 32.",
+            "env_variable": "COOP_WANDERER_LIMIT",
+            "default_value": "32",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|min:0|max:100000"
+        },
+        {
+            "name": "Wanderer limit scales",
+            "description": "Wanderer limit grows with players. Default: off.",
+            "env_variable": "COOP_WANDERER_LIMIT_SCALES",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Clan tier for a kingdom",
+            "description": "Clan tier needed to found a kingdom. Default: 4.",
+            "env_variable": "COOP_KINGDOM_CLAN_TIER",
+            "default_value": "4",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|min:0|max:100000"
+        },
+        {
+            "name": "Smithing recovery on the map",
+            "description": "Smithing stamina recovers while travelling. Default: off.",
+            "env_variable": "COOP_SMITHING_RECOVERY_OUTSIDE",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Smithing recovery speed",
+            "description": "Stamina recovery multiplier. Vanilla is 1. Default: 0.1.",
+            "env_variable": "COOP_SMITHING_RECOVERY_MULTIPLIER",
+            "default_value": "0.1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|numeric|min:0|max:10000"
+        },
+        {
+            "name": "Looter multiplier",
+            "description": "Looter party count. High values lag. Default: 1.0.",
+            "env_variable": "COOP_LOOTERS_MULTIPLIER",
+            "default_value": "1.0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|numeric|min:0|max:10000"
+        },
+        {
+            "name": "Lord defection retries",
+            "description": "Vanilla, NeverExpire or AlwaysRetry. Default: Vanilla.",
+            "env_variable": "COOP_LORD_DEFECTION_RETRIES",
+            "default_value": "Vanilla",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:Vanilla,NeverExpire,AlwaysRetry"
+        },
+        {
+            "name": "Hero executions",
+            "description": "Players can execute AI heroes. Default: on.",
+            "env_variable": "COOP_HERO_EXECUTIONS",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
+        },
+        {
+            "name": "Execute players' clan members",
+            "description": "Players can execute each other's clan members. Default: off.",
+            "env_variable": "COOP_CLAN_MEMBER_EXECUTIONS",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean"
         }
     ]
 }
